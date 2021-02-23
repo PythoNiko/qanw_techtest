@@ -22,20 +22,16 @@ class Album extends Model
      * @var string[] $fillable
      */
     protected $fillable = [
-        'county',
-        'country',
-        'town',
-        'description',
-        'full_details_url',
-        'displayable_address',
-        'image_url',
-        'thumbnail_url',
-        'latitude',
-        'longtitude',
-        'num_of_bedrooms',
-        'num_of_bathrooms',
-        'price',
-        'property_type',
-        'for_sale_rent'
+        'user_id',
+        'album_id',
+        'title',
     ];
+
+    /**
+     * Get the user associated to the album
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

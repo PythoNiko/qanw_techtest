@@ -12,14 +12,32 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
+     * Table that the model represents
+     *
+     * @var string
+     */
+    protected $table = 'qanw_users';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
-        'password',
+        'address_line_1',
+        'address_line_2',
+        'city',
+        'zipcode',
+        'geo-lat',
+        'geo-lng',
+        'phone',
+        'website',
+        'company_name',
+        'company_catchphrase',
+        'company_bs',
     ];
 
     /**
@@ -40,4 +58,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the album(s) associated to the user
+     */
+    public function album()
+    {
+        return $this->hasMany(Album::class);
+    }
 }
