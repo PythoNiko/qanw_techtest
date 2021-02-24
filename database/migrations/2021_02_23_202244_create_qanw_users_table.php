@@ -10,7 +10,7 @@ class CreateQanwUsersTable extends Migration
      * Run the migrations.
      *
      * NOTE: table named QANW as existing users table already exists for another project.
-     * Under normal circumstanmces this would just be named 'users'.
+     * Under normal circumstances this would just be named 'users'.
      * So pipe doon James
      *
      * @return void
