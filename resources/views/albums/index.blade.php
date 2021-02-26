@@ -30,6 +30,7 @@
                                             {{ $album->album_id }}
                                         </td>
                                         <td>
+                                            {{-- ToDo: Link to User page here --}}
                                             {{ $album->user_id }}
                                         </td>
                                         <td>

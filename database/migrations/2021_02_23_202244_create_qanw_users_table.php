@@ -26,8 +26,8 @@ class CreateQanwUsersTable extends Migration
             $table->string('address_line_2');
             $table->string('city');
             $table->string('zipcode');
-            $table->decimal('geo-lat', 10, 7);
-            $table->decimal('geo-lng', 10, 7);
+            $table->decimal('geo_lat', 10, 7);
+            $table->decimal('geo_lng', 10, 7);
             $table->string('phone');
             $table->string('website');
             $table->string('company_name');

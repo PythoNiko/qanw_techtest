@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use App\Models\Album;
+use App\Helpers\API;
 use Illuminate\Http\Request;
 
 class AlbumsController extends Controller
@@ -23,7 +24,7 @@ class AlbumsController extends Controller
 
         // load data from API and set flag to 1
         if ($config && $config->data_loaded == 0) {
-            $this->populateAPIData();
+            API\Grabber::populateAPIData();
             $config->data_loaded = 1;
             $config->save();
         }
@@ -38,62 +39,6 @@ class AlbumsController extends Controller
             'albums',
             'albumCount'
         ));
-    }
-
-    public function populateAPIData()
-    {
-        // initial curl call to get last_page info from API
-        $curl = curl_init();
-
-        $resources = ['albums'];
-
-        // cURL params
-        $endPoint = 'https://jsonplaceholder.typicode.com/';
-
-        foreach ($resources as $resource) {
-            curl_setopt_array($curl, [
-                CURLOPT_URL => $endPoint . $resource,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_POST => 1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_POSTFIELDS => "",
-                CURLOPT_HTTPHEADER => [
-                    "Content-Type: application/json"
-                ]
-            ]);
-
-            // execute cURL call
-            $response = curl_exec($curl);
-
-            $responseStatus = curl_getinfo($curl);
-
-            // dd($responseStatus);
-
-            // close instance of cURL
-            curl_close($curl);
-
-            // decode the response
-            $data = json_decode($response, true);
-
-            if ($responseStatus['http_code'] != 404 && !empty($data)){
-                foreach ($data as $dataItem) {
-                    // create new instance of album and assign values to attributes from api data
-                    $album = new Album();
-
-                    $album->user_id = $dataItem['userId'];
-                    $album->album_id = $dataItem['id'];
-                    $album->title = $dataItem['title'];
-
-                    // error handling if data does not save to new Album object
-                    if (!$album->save()) {
-                        trigger_error("Error! Property did not save successfully.");
-                    }
-                }
-            }
-        }
     }
 
     /**
