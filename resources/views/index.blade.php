@@ -52,7 +52,7 @@
                     </li>
                 </ul>
 
-                <h4>Suppoer</h4>
+                <h4>Support</h4>
                 <p>Please feel free to get in touch if you have any further questions on this task.</p>
                 <p>List of albums endpoint: https://jsonplaceholder.typicode.com/albums</p>
                 <p>List of user’s endpoint: https://jsonplaceholder.typicode.com/users</p>
