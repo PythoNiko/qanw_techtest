@@ -18,7 +18,7 @@
                             <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Album ID</th>
-                                <th scope="col">User ID</th>
+                                <th scope="col">User</th>
                                 <th scope="col">Title</th>
                             </tr>
                             </thead>
@@ -31,10 +31,10 @@
                                         </td>
                                         <td>
                                             {{-- ToDo: Link to User page here --}}
-                                            {{ $album->user_id }}
+                                            {{ $album->user->name }}
                                         </td>
                                         <td>
-                                            {{ $album->title }}
+                                            {{ ucwords($album->title) }}
                                         </td>
                                     </tr>
                                 @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use App\Models\Album;
+use App\Models\User;
 use App\Helpers\API;
 use Illuminate\Http\Request;
 
@@ -35,9 +36,13 @@ class AlbumsController extends Controller
         // count of properties
         $albumCount = Album::all()->count();
 
+        // get album user?
+        $albumUser = User::find(1);
+
         return view('albums.index', compact(
             'albums',
-            'albumCount'
+            'albumCount',
+            'albumUser'
         ));
     }
 

@@ -25,7 +25,7 @@
                 <ul>
                     <li>To implement a connection to the test API </li>
                     <ul>
-                        <li>https://jsonplaceholder.typicode.com/</li>
+                        <li><a href="https://jsonplaceholder.typicode.com/">API Endpoint Here</a></li>
                         <li>Grab and store the user’s data and the albums data that is available, store this in a
                             means that you see appropriate. These could be related, and you can see that from the
                             responses returned.</li>
@@ -54,8 +54,8 @@
 
                 <h4>Support</h4>
                 <p>Please feel free to get in touch if you have any further questions on this task.</p>
-                <p>List of albums endpoint: https://jsonplaceholder.typicode.com/albums</p>
-                <p>List of user’s endpoint: https://jsonplaceholder.typicode.com/users</p>
+                <p>List of albums endpoint: <a href="https://jsonplaceholder.typicode.com/albums">Albums Endpoint</a></p>
+                <p>List of user’s endpoint: <a href="https://jsonplaceholder.typicode.com/users">Users Endpoint</a></p>
             </div>
         </div>
     </div>

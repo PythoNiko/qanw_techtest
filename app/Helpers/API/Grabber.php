@@ -13,6 +13,8 @@ class Grabber
      * At this moment in time only calling albums and users.
      * Probably a much more secure way of achieving this.
      *
+     * ToDo: Put in a cron job to watch for new/updated entries from API
+     *
      * @return void
      */
     public static function populateAPIData(): void
