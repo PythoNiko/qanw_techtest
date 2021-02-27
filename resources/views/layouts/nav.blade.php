@@ -7,9 +7,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item {{Request::is('') ? 'active' : null}}">
-                <a class="nav-link" href="{{route('index')}}">Home</a>
-            </li>
             <li class="nav-item {{Request::is('albums*') ? 'active' : null}}">
                 <a class="nav-link" href="{{route('albums.index')}}">Albums</a>
             </li>

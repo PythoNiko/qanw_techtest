@@ -17,7 +17,5 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/home', 'HomeController@index');
-
-Route::resource('albums', 'AlbumsController');
+Route::resource('albums', 'AlbumController');
 Route::resource('users', 'UsersController');

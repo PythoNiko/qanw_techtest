@@ -30,8 +30,7 @@
                                             {{ $album->album_id }}
                                         </td>
                                         <td>
-                                            {{-- ToDo: Link to User page here --}}
-                                            {{ $album->user->name }}
+                                            <a href="{{ route('users.show', ['user' => $album->user]) }}">{{ $album->user->name }}</a>
                                         </td>
                                         <td>
                                             {{ ucwords($album->title) }}
